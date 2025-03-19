@@ -2,7 +2,6 @@ import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
 import Works from '../components/Works'
 import Carousel from '../components/Carousel'
-import BoxTitle from '../components/BoxTitle'
 
 export default function CasesPage() {
   return (

@@ -19,9 +19,9 @@ export default function Navigation() {
           </div>
 
           <div className="hidden md:flex items-center space-x-8">
-            <a href="/" className="text-white hover:text-white/80 transition-colors">首页</a>
-            <a href="/cases" className="text-white hover:text-white/80 transition-colors">案例</a>
-            <a href="/services" className="text-white hover:text-white/80 transition-colors">服务</a>
+            <Link href="/" className="text-white hover:text-white/80 transition-colors">首页</Link>
+            <Link href="/cases" className="text-white hover:text-white/80 transition-colors">案例</Link>
+            <Link href="/services" className="text-white hover:text-white/80 transition-colors">服务</Link>
           </div>
         </div>
       </div>
