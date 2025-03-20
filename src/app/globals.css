@@ -1,17 +1,5 @@
 @import "tailwindcss";
 
-@theme {
-  /* 主色调 */
-  --color-primary: #112e82;
-  --color-primary-light: #1a3a9f;
-  --color-primary-dark: #0a2575;
-
-  /* 强调色 */
-  --color-accent: #22D3EE;
-  --color-accent-light: #67E8F9;
-  --color-accent-dark: #06B6D4;
-}
-
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
