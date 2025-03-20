@@ -9,22 +9,25 @@ type FooterCardProps = {
   borderColor: string
 }
 
-function FooterCard({ title, subtitle, content, image, borderColor }: FooterCardProps) {
+function FooterCard({ title, subtitle, content, image }: FooterCardProps) {
   return (
-    <div className="relative group cursor-pointer overflow-hidden shadow border-t-8" style={{borderColor}}>
-      <div className="relative w-full h-48 grayscale group-hover:grayscale-0 transition-all duration-300">
+    <div className="relative group cursor-pointer overflow-hidden shadow-lg hover:shadow-2xl rounded-xl border-t-4 border-white/20 transition-all duration-300">
+      <div className="relative w-full h-48 grayscale group-hover:grayscale-0 transition-all duration-500">
         <Image
           src={image}
           alt={title}
           fill
-          className="object-cover"
+          className="object-cover transform group-hover:scale-110 transition-transform duration-700"
         />
-        <div className="absolute inset-0 bg-white"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/70 to-primary"></div>
       </div>
-      <div className="absolute inset-0 flex flex-col justify-center items-center text-gray-500 p-6 text-base">
-        <h3 className="text-2xl font-bold mb-1">{title}</h3>
-        <p className="text-sm mb-3">{subtitle}</p>
-        <p className="text-sm text-gray-800 whitespace-pre-line text-center">{content}</p>
+      <div className="absolute inset-0 flex flex-col justify-center items-center p-6 text-base backdrop-blur-sm bg-gradient-to-b from-primary/30 to-primary/50 group-hover:from-primary/40 group-hover:to-primary/60 transition-all duration-300">
+        <div className="transform group-hover:-translate-y-2 transition-transform duration-300">
+          <h3 className="text-2xl font-bold mb-2 text-white group-hover:text-accent transition-colors">{title}</h3>
+          <p className="text-sm mb-4 text-white/90 tracking-wider uppercase">{subtitle}</p>
+          <div className="h-[1px] w-16 mx-auto bg-gradient-to-r from-transparent via-white to-transparent mb-4 opacity-50 group-hover:opacity-100 transition-opacity"></div>
+          <p className="text-sm text-white/80 whitespace-pre-line text-center leading-relaxed">{content}</p>
+        </div>
       </div>
     </div>
   )
@@ -33,45 +36,47 @@ function FooterCard({ title, subtitle, content, image, borderColor }: FooterCard
 export default function Footer() {
   const footerCards = [
     {
-      title: '合作',
-      subtitle: 'Cooperation',
-      content: 'shaw@crecohe.com',
-      image: '/footer/cooperation.jpg',
-      borderColor: 'var(--color-red-500)' // 自定义 borde
+      title: "创新思维",
+      subtitle: "Innovation Thinking",
+      content: "持续探索技术前沿\n用创新思维解决传统问题",
+      image: "/footer/innovation.jpg",
+      borderColor: "#3B82F6"
     },
     {
-      title: '加入',
-      subtitle: 'Join Us',
-      content: 'CRETEAM计划\nCRE DESIGN开源',
-      image: '/footer/join.jpg',
-      borderColor: 'var(--color-purple-500)' // 自定义 borde
+      title: "专业团队",
+      subtitle: "Professional Team",
+      content: "拥有丰富行业经验\n为客户提供最优质的解决方案",
+      image: "/footer/team.jpg",
+      borderColor: "#22D3EE"
     },
     {
-      title: '联系',
-      subtitle: 'Contact',
-      content: '中国成都IFS国际金融中心\n2号办公楼27层',
-      image: '/footer/contact.jpg',
-      borderColor: 'var(--color-cyan-500)' // 自定义 borde
+      title: "优质服务",
+      subtitle: "Quality Service",
+      content: "全程专人对接\n确保项目顺利交付",
+      image: "/footer/service.jpg",
+      borderColor: "#0EA5E9"
     }
-  ]
+  ];
 
   const navLinks = [
-    { text: '案例', href: '/cases' },
-    { text: '服务', href: '/services' },
-    { text: '团队', href: '/team' },
-    { text: 'BLOG', href: '/blog' }
-  ]
+    { href: '/cases', text: '案例' },
+    { href: '/services', text: '服务' },
+    { href: '/articles', text: '文章' }
+  ];
 
   const socialLinks = [
-    { icon: '/wechat.svg', href: '#', name: 'Wechat' },
-    { icon: '/blog.svg', href: '#', name: 'Blog' },
-    { icon: '/zhihu.svg', href: '#', name: 'Zhihu' }
-  ]
+    { name: 'WeChat', icon: '/social/wechat.svg', href: '#' },
+    { name: 'Weibo', icon: '/social/weibo.svg', href: '#' },
+    { name: 'LinkedIn', icon: '/social/linkedin.svg', href: '#' }
+  ];
 
   return (
-    <footer className="bg-[#1e2b5c] mt-32 pb-8">
-      <div className="max-w-5xl mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 -mt-12">
+    <footer className="relative bg-gradient-to-br from-[#112e82] via-[#1a3a9f] to-[#0a2575]">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_800px_at_50%_-100px,rgba(34,211,238,0.1),transparent)]"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,transparent_0%,rgba(255,255,255,0.05)_15%,transparent_30%,transparent_70%,rgba(255,255,255,0.05)_85%,transparent_100%)]"></div>
+      <div className="absolute inset-0 bg-[url('/grid.svg')] bg-[length:32px_32px] opacity-10"></div>
+      <div className="max-w-5xl mx-auto px-4 relative pt-24 pb-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {footerCards.map((card, index) => (
             <FooterCard key={index} {...card} />
           ))}
@@ -84,14 +89,14 @@ export default function Footer() {
               alt="创禾聚力"
               width={120}
               height={40}
-              className="brightness-0 invert"
+              className="brightness-0 invert opacity-90 hover:opacity-100 transition-opacity"
             />
             <div className="flex space-x-6">
               {navLinks.map((link, index) => (
                 <Link
                   key={index}
                   href={link.href}
-                  className="text-white/80 hover:text-white text-sm transition-colors"
+                  className="text-white/80 hover:text-accent text-sm transition-colors"
                 >
                   {link.text}
                 </Link>
@@ -104,7 +109,7 @@ export default function Footer() {
               <Link
                 key={index}
                 href={link.href}
-                className="w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 transition-all duration-300 hover:scale-110"
                 aria-label={link.name}
               >
                 <Image
@@ -112,16 +117,18 @@ export default function Footer() {
                   alt={link.name}
                   width={20}
                   height={20}
-                  className="brightness-0 invert"
+                  className="brightness-0 invert opacity-80 group-hover:opacity-100"
                 />
               </Link>
             ))}
           </div>
         </div>
 
-        <p className="text-center text-white/60 text-sm mt-8">
-          @CRECOHE 创禾聚力 All rights reserved. 蜀ICP备09013714号-4号
-        </p>
+        <div className="mt-8 pt-8 border-t border-white/10">
+          <p className="text-center text-white/70 text-sm tracking-wider">
+            @CRECOHE 创禾聚力 All rights reserved. 蜀ICP备09013714号-4号
+          </p>
+        </div>
       </div>
     </footer>
   )
