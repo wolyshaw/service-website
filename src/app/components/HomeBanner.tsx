@@ -55,7 +55,7 @@ export default function HomeBanner() {
   }, [slides.length]);
 
   return (
-    <div className="relative h-[600px] bg-primary-dark">
+    <div className="relative h-[600px] bg-[#0a2575]">
       {slides.map((slide, index) => (
         <div
           key={index}
@@ -70,7 +70,7 @@ export default function HomeBanner() {
             className="object-cover opacity-70"
             priority={index === 0}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary-dark/90 via-primary-dark/80 to-transparent">
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0a2575]/90 via-[#0a2575]/80 to-transparent">
             <div className="max-w-6xl mx-auto px-4 h-full flex items-center">
               <div className="max-w-2xl">
                 <h1
@@ -88,9 +88,8 @@ export default function HomeBanner() {
                 {slide.cta && (
                   <Link
                     href={slide.cta.link}
-                    className={`inline-block px-8 py-3 bg-accent text-white font-bold
-                      hover:bg-accent-dark hover:text-white/90 transition-all duration-300
-                      transform transition-all duration-1000 delay-600 rounded-lg
+                    className={`inline-block px-8 py-3 bg-[#22D3EE] hover:bg-[#06B6D4] text-white font-bold
+                      transition-all duration-300 transform transition-all duration-1000 delay-600 rounded-lg
                       ${currentSlide === index ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
                   >
                     {slide.cta.text}
@@ -109,8 +108,8 @@ export default function HomeBanner() {
             key={index}
             className={`w-2 h-2 rounded-full transition-all duration-300
               ${currentSlide === index
-                ? 'bg-[var(--color-accent)] w-6'
-                : 'bg-white opacity-50 hover:opacity-70'
+                ? 'bg-[#22D3EE] w-6'
+                : 'bg-white/50 hover:bg-white/70'
               }`}
             onClick={() => setCurrentSlide(index)}
           />
