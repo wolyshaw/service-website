@@ -1,14 +1,23 @@
+'use client'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 
 type WorkItem = {
   image: string
   title: string
   tags: string[]
+  slug: string
 }
 
-function WorkCard({ image, title, tags }: WorkItem) {
+function WorkCard({ image, title, tags, slug }: WorkItem) {
+  const router = useRouter()
+
+  const handleClick = () => {
+    router.push(`/articles/${slug}`)
+  }
+
   return (
-    <div className="group overflow-hidden rounded-lg cursor-pointer">
+    <div className="group overflow-hidden rounded-lg cursor-pointer" onClick={handleClick}>
       <div className="relative aspect-w-16 aspect-h-9 w-full overflow-hidden">
         <Image
           src={image}
@@ -37,22 +46,26 @@ export default function Works() {
     {
       image: "http://www.crecohe.com/static/img/p2.09d9e0c.jpg",
       title: "智慧打造，协同共赢",
-      tags: ["全屏视频背景", "移动端设计"]
+      tags: ["全屏视频背景", "移动端设计"],
+      slug: "smart-collaboration"
     },
     {
       image: "http://www.crecohe.com/static/img/p2.09d9e0c.jpg",
       title: "智慧打造，协同共赢",
-      tags: ["全屏视频背景", "移动端设计"]
+      tags: ["全屏视频背景", "移动端设计"],
+      slug: "smart-design"
     },
     {
       image: "http://www.crecohe.com/static/img/p2.09d9e0c.jpg",
       title: "智慧打造，协同共赢",
-      tags: ["全屏视频背景", "移动端设计"]
+      tags: ["全屏视频背景", "移动端设计"],
+      slug: "mobile-design"
     },
     {
       image: "http://www.crecohe.com/static/img/p2.09d9e0c.jpg",
       title: "智慧打造，协同共赢",
-      tags: ["全屏视频背景", "移动端设计"]
+      tags: ["全屏视频背景", "移动端设计"],
+      slug: "video-background"
     }
   ]
 

@@ -19,9 +19,9 @@ export default function Carousel({ images, interval = 3000 }: CarouselProps) {
     return () => clearInterval(timer);
   }, [interval]);
 
-  const previousSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + images.length) % images.length);
-  };
+  // const previousSlide = () => {
+  //   setCurrentSlide((prev) => (prev - 1 + images.length) % images.length);
+  // };
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % images.length);
@@ -56,7 +56,7 @@ export default function Carousel({ images, interval = 3000 }: CarouselProps) {
           </div>
         ))}
       </div>
-
+{/*
       <button
         type="button"
         className="absolute top-1/2 -translate-y-1/2 start-4 z-30 group focus:outline-none"
@@ -105,7 +105,7 @@ export default function Carousel({ images, interval = 3000 }: CarouselProps) {
           </svg>
           <span className="sr-only">Next</span>
         </span>
-      </button>
+      </button> */}
     </div>
   );
 }

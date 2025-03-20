@@ -22,6 +22,7 @@ export default function Navigation() {
             <Link href="/" className="text-white hover:text-white/80 transition-colors">首页</Link>
             <Link href="/cases" className="text-white hover:text-white/80 transition-colors">案例</Link>
             <Link href="/services" className="text-white hover:text-white/80 transition-colors">服务</Link>
+            <Link href="/articles" className="text-white hover:text-white/80 transition-colors">文章</Link>
           </div>
         </div>
       </div>

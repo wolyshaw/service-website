@@ -15,31 +15,27 @@ export default function Home() {
       title: "产品逻辑",
       subtitle: "Product Logic",
       description: "专注于产品策略与用户体验",
-      gradientFrom: "pink-500",
-      gradientTo: "red-500"
+      variant: 'pink'
     },
     {
       title: "原型交互",
       subtitle: "Prototype Interaction",
       description: "打造流畅的交互体验",
-      gradientFrom: "blue-500",
-      gradientTo: "purple-500"
+      variant: 'blue'
     },
     {
       title: "视觉设计",
       subtitle: "Visual Design",
       description: "创造独特的视觉语言",
-      gradientFrom: "blue-400",
-      gradientTo: "blue-600"
+      variant: 'indigo'
     },
     {
       title: "技术研发",
       subtitle: "Technology Development",
-      description: "技术驱动的创新发展",
-      gradientFrom: "cyan-400",
-      gradientTo: "blue-500"
+      description: "技术驱动创新发展",
+      variant: 'cyan'
     }
-  ]
+  ] as const;
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
