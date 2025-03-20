@@ -74,13 +74,13 @@ export default function HomeBanner() {
             <div className="max-w-6xl mx-auto px-4 h-full flex items-center">
               <div className="max-w-2xl">
                 <h1
-                  className={`text-5xl font-bold text-surface mb-6 transform transition-all duration-1000 delay-200
+                  className={`text-5xl font-bold text-white mb-6 transform transition-all duration-1000 delay-200
                     ${currentSlide === index ? 'translate-x-0 opacity-100' : '-translate-x-20 opacity-0'}`}
                 >
                   {slide.title}
                 </h1>
                 <p
-                  className={`text-xl text-surface/90 mb-8 transform transition-all duration-1000 delay-400
+                  className={`text-xl text-white/90 mb-8 transform transition-all duration-1000 delay-400
                     ${currentSlide === index ? 'translate-x-0 opacity-100' : '-translate-x-20 opacity-0'}`}
                 >
                   {slide.subtitle}
@@ -88,8 +88,8 @@ export default function HomeBanner() {
                 {slide.cta && (
                   <Link
                     href={slide.cta.link}
-                    className={`inline-block px-8 py-3 bg-accent text-surface font-bold
-                      hover:bg-accent-dark hover:text-surface transition-all duration-300
+                    className={`inline-block px-8 py-3 bg-accent text-white font-bold
+                      hover:bg-accent-dark hover:text-white/90 transition-all duration-300
                       transform transition-all duration-1000 delay-600 rounded-lg
                       ${currentSlide === index ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
                   >
@@ -108,7 +108,10 @@ export default function HomeBanner() {
           <button
             key={index}
             className={`w-2 h-2 rounded-full transition-all duration-300
-              ${currentSlide === index ? 'bg-accent w-6' : 'bg-surface/50 hover:bg-surface/80'}`}
+              ${currentSlide === index
+                ? 'bg-[var(--color-accent)] w-6'
+                : 'bg-white opacity-50 hover:opacity-70'
+              }`}
             onClick={() => setCurrentSlide(index)}
           />
         ))}
