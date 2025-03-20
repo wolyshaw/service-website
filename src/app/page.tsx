@@ -37,25 +37,25 @@ export default function Home() {
       title: "产品逻辑",
       subtitle: "Product Logic",
       description: "专注于产品策略与用户体验",
-      variant: 'pink'
+      variant: 'product'
     },
     {
       title: "原型交互",
       subtitle: "Prototype Interaction",
       description: "打造流畅的交互体验",
-      variant: 'blue'
+      variant: 'prototype'
     },
     {
       title: "视觉设计",
       subtitle: "Visual Design",
       description: "创造独特的视觉语言",
-      variant: 'indigo'
+      variant: 'design'
     },
     {
       title: "技术研发",
       subtitle: "Technology Development",
       description: "技术驱动创新发展",
-      variant: 'cyan'
+      variant: 'tech'
     }
   ] as const;
 
