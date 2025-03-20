@@ -1,13 +1,9 @@
 import Navigation from './components/Navigation'
-// import LogoAnimation from './components/LogoAnimation'
 import ServiceCard from './components/ServiceCard'
-// import Philosophy from './components/Philosophy'
-// import CaseStudies from './components/CaseStudies'
 import Footer from './components/Footer'
-// import Banner from './components/Banner'
-import Carousel from './components/Carousel'
 import Image from 'next/image'
 import Link from 'next/link'
+import HomeBanner from './components/HomeBanner'
 
 interface FeatureProps {
   title: string
@@ -107,26 +103,7 @@ export default function Home() {
       <Navigation />
 
       <main className="flex-1">
-        {/* Banner区域 */}
-        <div className="relative">
-          <Carousel
-            images={[
-              "/carousel/slide1.jpg",
-              "/carousel/slide2.jpg",
-              "/carousel/slide3.jpg",
-              "/carousel/slide4.jpg",
-              "/carousel/slide5.jpg"
-            ]}
-          />
-          <div className="absolute inset-0 bg-black/30 flex items-center">
-            <div className="max-w-6xl mx-auto px-4 text-white">
-              <h1 className="text-5xl font-bold mb-6">创新科技 引领未来</h1>
-              <p className="text-xl max-w-2xl">
-                致力于为企业提供专业的数字化解决方案，助力企业实现技术创新与业务增长
-              </p>
-            </div>
-          </div>
-        </div>
+        <HomeBanner />
 
         {/* 服务卡片区域 */}
         <div className="py-24 bg-gray-50">
